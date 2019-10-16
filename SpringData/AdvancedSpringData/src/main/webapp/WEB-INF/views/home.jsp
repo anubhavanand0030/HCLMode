@@ -34,8 +34,16 @@
 		<form method="post">
 		<select name="list" id="list">
 		<%
+		int n=0;
+		if(request.getAttribute("pageno")!=null){
+			 n=((Integer)request.getAttribute("pageno")).intValue();
+		}
+			out.println("<option value='/displayAll/Page/" + n + "' >Page "+n+" </option>");
+			
 			for(int i=0;i<loop;i++)
 			{	
+				
+				
 				out.println("<option");
 				out.println(" value='/displayAll/Page/" + i + "' >Page "+i);
 				out.println("</option>");
